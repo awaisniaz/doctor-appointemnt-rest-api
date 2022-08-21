@@ -1,0 +1,2 @@
+import mongoose from "mongoose";
+mongoose.connect('mongodb://localhost:27017/test').then(() => { console.log("Database Connection Successfully ✔") }).catch(err => { console.log(`Have some issue ${err} 🧜‍♂️`) });
