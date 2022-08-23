@@ -41,6 +41,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.userController = void 0;
 var user_modal_1 = __importDefault(require("../../Models/user_modal"));
+var imageUploader_1 = __importDefault(require("../../utils/imageUploader"));
+var uploader = imageUploader_1.default.single("imgUploader");
 exports.userController = {
     login: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
         var user;
@@ -64,6 +66,26 @@ exports.userController = {
                 res.send({ message: "user created success", data: data });
             }).catch(function (err) {
                 res.send({ message: "Something wrong", data: err });
+            });
+            return [2 /*return*/];
+        });
+    }); },
+    updateUser: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2 /*return*/];
+        });
+    }); },
+    deleteUser: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            console.log('I am Delete Route');
+            return [2 /*return*/];
+        });
+    }); },
+    updateProfileImage: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            uploader(req, res, function (err) {
+                console.log(err);
+                res.send(err);
             });
             return [2 /*return*/];
         });

@@ -1,4 +1,7 @@
 import user_modal from "../../Models/user_modal"
+import upload from "../../utils/imageUploader"
+
+const uploader = upload.single("imgUploader")
 export const userController = {
     login: async (req: any, res: any) => {
         const user = await user_modal.find()
@@ -23,5 +26,13 @@ export const userController = {
     },
     deleteUser: async (req: any, res: any) => {
         console.log('I am Delete Route')
+    }
+    ,
+    updateProfileImage: async (req: any, res: any) => {
+        uploader(req, res, (err) => {
+            console.log(err)
+            res.send(err)
+        })
+
     }
 }

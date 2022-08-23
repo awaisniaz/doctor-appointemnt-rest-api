@@ -10,4 +10,8 @@ var user_router = express_1.default.Router();
 // user_router.use(user_middleware?.validateUser)
 user_router.get('/login', [user_middleware_1.user_middleware === null || user_middleware_1.user_middleware === void 0 ? void 0 : user_middleware_1.user_middleware.validateUser], Users_Controllers_1.userController === null || Users_Controllers_1.userController === void 0 ? void 0 : Users_Controllers_1.userController.login);
 user_router.post('/register/', Users_Controllers_1.userController === null || Users_Controllers_1.userController === void 0 ? void 0 : Users_Controllers_1.userController.register);
+user_router.patch('/update', Users_Controllers_1.userController === null || Users_Controllers_1.userController === void 0 ? void 0 : Users_Controllers_1.userController.updateUser);
+user_router.delete('deleteuser', Users_Controllers_1.userController === null || Users_Controllers_1.userController === void 0 ? void 0 : Users_Controllers_1.userController.deleteUser);
+user_router.patch("/updateprofilephoto", Users_Controllers_1.userController === null || Users_Controllers_1.userController === void 0 ? void 0 : Users_Controllers_1.userController.updateProfileImage);
+//  upload.single("imgUploader"), 
 exports.default = user_router;
